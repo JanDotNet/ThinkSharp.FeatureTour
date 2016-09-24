@@ -7,6 +7,6 @@ This repository contains a demo application that shows how to use it.
 
 Browse [FeatureTour Wiki](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki) for documentation
 
-Install Feature via [Nuget](https://www.nuget.org/packages/Thinksharp.FeatureTour)
+Install FeatureTour via [Nuget](https://www.nuget.org/packages/Thinksharp.FeatureTour)
 
       Install-Package ThinkSharp.FeatureTour 
