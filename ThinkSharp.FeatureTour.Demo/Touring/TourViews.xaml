@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="ImageWithTextView">
+        <StackPanel>
+            <Image Source="../Images/ExampleImage.png" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ViewWithViewModel">
+        <StackPanel Width="100">
+            <TextBlock Text="Binary Calculator" HorizontalAlignment="Center" FontWeight="Bold" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text}" IsReadOnly="True"/>
+                <Button Content="0" Grid.Row="1" Grid.Column="0" Command="{Binding CmdZero}" />
+                <Button Content="1" Grid.Row="1" Grid.Column="1" Command="{Binding CmdOne}"/>
+                <Button Content="+" Grid.Row="2" Grid.Column="0" Command="{Binding CmdAdd}" />
+                <Button Content="-" Grid.Row="2" Grid.Column="1" Command="{Binding CmdSubstract}" />
+                <Button Content="C" Grid.Row="3" Grid.Column="0" Command="{Binding CmdClear}" />
+                <Button Content="=" Grid.Row="3" Grid.Column="1" Command="{Binding CmdResult}" />
+            </Grid>
+            <TextBlock Text="" HorizontalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CustomizeHeaderView">
+        <TextBlock Text="{Binding Header}" FontSize="42" />
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizeHeaderContentView">
+        <StackPanel>
+            <TextBlock Text="Enter Header:"></TextBlock>
+            <TextBox Text="{Binding Header, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
