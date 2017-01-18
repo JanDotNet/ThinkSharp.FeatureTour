@@ -64,9 +64,11 @@
         <TabControl Grid.Column="1" SelectedIndex="{Binding TabIndex}" x:Name="TabControl">
             <TabItem Header="Positioning">
                 <Grid>
-                    <Rectangle Height="350" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="Green"
-                             featureTouring:TourHelper.ElementID="{x:Static app:ElementID.Rectangle}"
-                             featureTouring:TourHelper.Placement="{Binding Placement}" />
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            featureTouring:TourHelper.ElementID="{x:Static app:ElementID.Rectangle}"
+                            featureTouring:TourHelper.Placement="{Binding Placement}">
+                        <Button Content="Button" FontSize="32" Width="150" />
+                    </Border>
                 </Grid>
             </TabItem>
             <TabItem Header="Formular">
