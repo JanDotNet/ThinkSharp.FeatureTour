@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:featureTouring="clr-namespace:ThinkSharp.FeatureTouring;assembly=ThinkSharp.FeatureTour"
         xmlns:app="clr-namespace:ThinkSharp.FeatureTouring"
-        Title="FeatureTour - Demo" Height="400" Width="700"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="FeatureTour - Demo" Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         Icon="Images/Icon.ico">
     <Window.Resources>
@@ -12,6 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
             <ColumnDefinition />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
         
         <StackPanel Margin="5">
@@ -23,7 +25,7 @@
                     <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
                 </Style>
             </StackPanel.Resources>
-
+            
             <Button Content="Introduction (passive tour)"
                     featureTouring:TourHelper.ElementID="{x:Static app:ElementID.ButtonIntroduction}"
                     featureTouring:TourHelper.Placement="RightCenter"
@@ -48,27 +50,59 @@
                     featureTouring:TourHelper.Placement="RightCenter"/>
 
         </StackPanel>
-        
-        <GroupBox Header="Color Schema" Margin="5" VerticalAlignment="Bottom"
-                  featureTouring:TourHelper.ElementID="{x:Static app:ElementID.GroupBox}"
-                  featureTouring:TourHelper.Placement="TopCenter">
-            <StackPanel>
-                <ComboBox SelectedIndex="{Binding ColorSchemaIndex}">
-                    <ComboBoxItem Content="Blue (default)" />
-                    <ComboBoxItem Content="Dark (rounded)" />
-                    <ComboBoxItem Content="Green (edged)" />
-                </ComboBox>
-            </StackPanel>
-        </GroupBox>
 
-        <TabControl Grid.Column="1" SelectedIndex="{Binding TabIndex}" x:Name="TabControl">
+        <StackPanel Grid.Column="2" Margin="10"
+                        featureTouring:TourHelper.ElementID="{x:Static app:ElementID.GroupBox}"
+            
+                    featureTouring:TourHelper.Placement="TopCenter">
+
+            <TextBlock />
+            <TextBlock Text="Border Style" FontWeight="Bold" FontSize="18" />
+            <Separator />
+            
+            <Label Content="Border Thickness" />
+            <Slider Value="{Binding PopupStyle.BorderThicknessValue}" Minimum="0" Maximum="50" />
+
+            <Label Content="Corner Radius" />
+            <Slider Value="{Binding PopupStyle.CornerRadius}" Minimum="0" Maximum="15" />
+
+            <Label Content="Border Color" />
+            <xctk:ColorPicker SelectedColor="{Binding PopupStyle.BorderBrushColor}" />
+
+            <TextBlock />
+            <TextBlock Text="Font Style" FontWeight="Bold" FontSize="18" />
+            <Separator />
+
+            <Label Content="Font Size" />
+            <Slider Value="{Binding PopupStyle.FontSize}" Minimum="5" Maximum="24" />
+
+            <Label Content="Font Color" />
+            <xctk:ColorPicker SelectedColor="{Binding PopupStyle.ForegroundColor}" />
+
+            <TextBlock />
+            <TextBlock Text="Popup Style" FontWeight="Bold" FontSize="18" />
+            <Separator />
+
+            <Label Content="Background Color" />
+            <xctk:ColorPicker SelectedColor="{Binding PopupStyle.BackgroundColor}" />
+            
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+        <TabControl SelectedIndex="{Binding TabIndex}" x:Name="TabControl">
             <TabItem Header="Positioning">
                 <Grid>
-                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    <Button Content="Button" FontSize="32" Width="150" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            FontWeight="Bold" Margin="40" Padding="30"
                             featureTouring:TourHelper.ElementID="{x:Static app:ElementID.Rectangle}"
-                            featureTouring:TourHelper.Placement="{Binding Placement}">
-                        <Button Content="Button" FontSize="32" Width="150" />
-                    </Border>
+                            featureTouring:TourHelper.Placement="{Binding Placement}"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Formular">
@@ -135,5 +169,14 @@
                            featureTouring:TourHelper.Placement="Center"/>
             </TabItem>
         </TabControl>
+
+            <TextBlock Grid.Row="1" Margin="5">
+            <Run Text="XAML Style " FontWeight="Bold" FontSize="18"/><LineBreak />
+            <Separator Width="200" /><LineBreak />
+            <Run Text="To use the current style, copy and paste the XAML below to the App.xaml of your application." />
+        </TextBlock>
+        <TextBox Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LightGray"
+                 Text="{Binding StyleText}" IsReadOnly="True" />
+        </Grid>
     </Grid>
 </Window>

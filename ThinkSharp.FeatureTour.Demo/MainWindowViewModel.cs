@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -22,8 +23,10 @@ namespace ThinkSharp.FeatureTouring
         private string _path;
         private string _result;
         private int _selectedIndex;
+        private string _styleText;
 
         private static readonly MainWindowViewModel _instance = new MainWindowViewModel();
+        private readonly PopupStyle myPopupStyle = new PopupStyle();
 
 
         // .ctor
@@ -35,6 +38,29 @@ namespace ThinkSharp.FeatureTouring
             navigator.ForStep(ElementID.TextBoxPath).AttachDoable(s => Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
             navigator.ForStep(ElementID.ComboBoxOption).AttachDoable(s => SelectedIndex = 1);
             navigator.ForStep(ElementID.TextBoxPath).AttachDoable(s => Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+
+            PopupStyle.PropertyChanged += (s, e) => StyleText = GetStyleText();
+            StyleText = GetStyleText();
+        }
+
+        private string GetStyleText()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("...");
+            sb.AppendLine("xmlns:featureTouringControls=\"clr -namespace:ThinkSharp.FeatureTouring.Controls;assembly=ThinkSharp.FeatureTour\"");
+            sb.AppendLine("...");
+            sb.AppendLine("");
+            sb.AppendLine("");
+            sb.AppendLine("<Style TargetType=\"featureTouringControls: TourControl\">");
+            sb.AppendLine($"    <Setter Property=\"Background\" Value=\"{myPopupStyle.BackgroundColor}\"/>");
+            sb.AppendLine($"    <Setter Property=\"BorderBrush\" Value=\"{myPopupStyle.BorderBrushColor}\"/>");
+            sb.AppendLine($"    <Setter Property=\"Foreground\" Value=\"{myPopupStyle.ForegroundColor}\"/>");
+            sb.AppendLine($"    <Setter Property=\"FontSize\" Value=\"{myPopupStyle.FontSize:0}\"/>");
+            sb.AppendLine($"    <Setter Property=\"CornerRadius\" Value=\"{myPopupStyle.CornerRadius:0}\"/>");
+            sb.AppendLine($"    <Setter Property=\"BorderThickness\" Value=\"{myPopupStyle.BorderThickness.Top:0}\"/>");
+            sb.AppendLine("</Style>");
+            return sb.ToString();
         }
 
 
@@ -180,8 +206,14 @@ namespace ThinkSharp.FeatureTouring
             set { Set("SelectedIndex", ref _selectedIndex, value); }
         }
 
+        public string StyleText
+        {
+            get { return _styleText; }
+            set { Set("StyleText", ref _styleText, value); }
+        }
+
+        public PopupStyle PopupStyle => myPopupStyle;
 
         public static MainWindowViewModel Instance { get { return _instance; } }
-
     }
 }

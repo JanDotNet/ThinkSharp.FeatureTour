@@ -1,0 +1,255 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:ThinkSharp.FeatureTouring.Controls;assembly=ThinkSharp.FeatureTour"
+    xmlns:featureTouring="clr-namespace:ThinkSharp.FeatureTouring;assembly=ThinkSharp.FeatureTour"
+    xmlns:featureTouring1="clr-namespace:ThinkSharp.FeatureTouring">
+
+
+    <!-- This is the orginal (default) theme of the feature tour component. -->
+    <Style TargetType="{x:Type controls:TourControl}">
+        <!-- Usually, that properties are set to constant values -->
+        <Setter Property="Background" Value="{Binding PopupStyle.Background, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}"/>
+        <Setter Property="BorderBrush" Value="{Binding PopupStyle.BorderBrush, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}"/>
+        <Setter Property="Foreground" Value="{Binding PopupStyle.Foreground, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}" />
+        <Setter Property="FontSize" Value="{Binding PopupStyle.FontSize, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}" />
+        <Setter Property="CornerRadius" Value="{Binding PopupStyle.CornerRadius, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}"/>
+        <Setter Property="BorderThickness" Value="{Binding PopupStyle.BorderThickness, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:TourControl}">
+                    <ControlTemplate.Resources>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+                        <DataTemplate x:Key="DefaultContentTemplate">
+                            <TextBox Text="{Binding ., Mode=OneWay}" 
+                                     Foreground="{TemplateBinding TextElement.Foreground}" 
+                                     FontSize="{TemplateBinding TextElement.FontSize}"
+                                     Background="Transparent" TextWrapping="Wrap" BorderThickness="0" IsReadOnly="True" />
+                        </DataTemplate>
+
+                        <DataTemplate x:Key="DefaultHeaderTemplate">
+                            <TextBlock Text="{Binding}" 
+                                       Foreground="{TemplateBinding TextElement.Foreground}" 
+                                       FontSize="{TemplateBinding TextElement.FontSize}"
+                                       FontWeight="Bold" VerticalAlignment="Center" TextWrapping="Wrap" />
+                        </DataTemplate>
+
+                        <controls:PlacementToAlignmentConverter x:Key="PlacementToAlignmentConverter" />
+                        <controls:PlacementToVisibilityConverter x:Key="PlacementToVisibilityConverter" />
+                        <controls:ContentDefaultTemplateIfNullConverter x:Key="ContentDefaultTemplateIfNullConverter" DefaultTemplate="{StaticResource DefaultContentTemplate}"/>
+                        <controls:ContentDefaultTemplateIfNullConverter x:Key="HeaderDefaultTemplateIfNullConverter" DefaultTemplate="{StaticResource DefaultHeaderTemplate}"/>
+                        <controls:BorderThicknessToInnerPolygonTransform x:Key="BorderThicknessToInnerPolygonTransform" />
+                        <controls:ThicknessToStrokeThickness x:Key="ThicknessToStrokeThickness" />
+                        <controls:BorderThicknessToContainerMarginConverter x:Key="BorderThicknessToContainerMarginConverter" />
+
+                        <Style TargetType="Polygon" x:Key="PolygonStyle">
+                            <Setter Property="StrokeThickness" Value="0" />
+                            <Setter Property="Fill" Value="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="Polygon" x:Key="InnerPolygonStyle" BasedOn="{StaticResource PolygonStyle}">
+                            <Setter Property="Fill" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Setters>
+                                <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                            </Style.Setters>
+                        </Style>
+                        <Style TargetType="Button" x:Key="ButtonStyle">
+                            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Border x:Name="Border" Background="Transparent" BorderThickness="3"
+                                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                                BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" >
+                                            <Grid Margin="2">
+                                                <TextBlock x:Name="Text" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
+                                                           HorizontalAlignment="Center" FontWeight="Bold" Margin="3,0,3,0"
+                                                           Foreground="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                                           FontSize="{Binding FontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                <Setter TargetName="Text" Property="Foreground" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" Value="0.3" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                        <!-- reset styles so that global application styles do not affect the view -->
+                        <Style TargetType="TextBox" />
+                        <Style TargetType="Border" />
+                        <Style TargetType="Grid" />
+                        <Style TargetType="ContentControl" />
+                    </ControlTemplate.Resources>
+
+                    <Grid Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="1" Grid.Column="1" x:Name="PopupArea"
+                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}">
+                            <Grid Margin="5" MinWidth="320">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Border HorizontalAlignment="Left" MinWidth="250" BorderThickness="0,0,0,2"
+                                        BorderBrush="{TemplateBinding BorderBrush}">
+                                    <ContentControl Content="{Binding Header}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                                    ContentTemplate="{Binding HeaderTemplate, Converter={StaticResource HeaderDefaultTemplateIfNullConverter}}"
+                                                    Foreground="{TemplateBinding Foreground}">
+                                    </ContentControl>
+                                </Border>
+                                <Button Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding CmdClose}">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate>
+                                                        <Border x:Name="Border" Background="Transparent" BorderThickness="2"
+                                                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                                                BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}">
+                                                            <Grid Margin="4">
+                                                                <Polygon x:Name="P1" Points="1,1 7,7" StrokeThickness="2"
+                                                                         Stroke="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                                <Polygon x:Name="P2" Points="1,7 7,1" StrokeThickness="2"
+                                                                         Stroke="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="Border" Property="Background" Value="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                                <Setter TargetName="P1" Property="Stroke" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                                <Setter TargetName="P2" Property="Stroke" Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+
+                                <ContentControl Grid.Row="1" Content="{Binding Content}" Margin="0, 10, 0, 10" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                                ContentTemplate="{Binding ContentTemplate, Converter={StaticResource ContentDefaultTemplateIfNullConverter}}"
+                                                Foreground="{TemplateBinding Foreground}" />
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="1" Text="{Binding Steps}" Margin="0,0,10,0"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold"/>
+
+                                    <Button Grid.Column="2" Content="{x:Static featureTouring:TextLocalization.DoIt}" Margin="0,0,10,0" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                        Command="{Binding CmdDoIt}" Style="{StaticResource ButtonStyle}" Visibility="{Binding ShowDoIt, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    </Button>
+
+                                    <Button Grid.Column="3" Content="{Binding ButtonText}" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                        Command="{Binding CmdNext}" Style="{StaticResource ButtonStyle}" Visibility="{Binding ShowNext, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <!-- Top -->
+
+                        <Grid Grid.Row="0" Grid.ColumnSpan="3"
+                              HorizontalAlignment="{Binding ActualPlacement, Converter={StaticResource PlacementToAlignmentConverter}, ConverterParameter={x:Static controls:BorderSide.Top}}"
+                              Visibility="{Binding ActualPlacement, Converter={StaticResource PlacementToVisibilityConverter}, ConverterParameter={x:Static controls:BorderSide.Top}}"
+                              Margin="{Binding BorderThickness, 
+                                               RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                               Converter={StaticResource BorderThicknessToContainerMarginConverter},
+                                               ConverterParameter={x:Static controls:BorderSide.Top}}">
+                            <Rectangle Height="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Width="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Top}}" />
+                        </Grid>
+
+                        <!-- Bottom -->
+                        <Grid Grid.Row="2" Grid.ColumnSpan="3"
+                              HorizontalAlignment="{Binding ActualPlacement, Converter={StaticResource PlacementToAlignmentConverter}, ConverterParameter={x:Static controls:BorderSide.Bottom}}"
+                              Visibility="{Binding ActualPlacement, Converter={StaticResource PlacementToVisibilityConverter}, ConverterParameter={x:Static controls:BorderSide.Bottom}}"
+                              Margin="{Binding BorderThickness, 
+                                               RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                               Converter={StaticResource BorderThicknessToContainerMarginConverter},
+                                               ConverterParameter={x:Static controls:BorderSide.Bottom}}">
+                            <Rectangle Height="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Width="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Bottom}}" />
+                        </Grid>
+
+                        <!-- Left -->
+                        <Grid Grid.Column="0" Grid.RowSpan="3"
+                              VerticalAlignment="{Binding ActualPlacement, Converter={StaticResource PlacementToAlignmentConverter}, ConverterParameter={x:Static controls:BorderSide.Left}}"
+                              Visibility="{Binding ActualPlacement, Converter={StaticResource PlacementToVisibilityConverter}, ConverterParameter={x:Static controls:BorderSide.Left}}"
+                              Margin="{Binding BorderThickness, 
+                                               RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                               Converter={StaticResource BorderThicknessToContainerMarginConverter},
+                                               ConverterParameter={x:Static controls:BorderSide.Left}}">
+                            <Rectangle Width="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Height="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Left}}" />
+                        </Grid>
+
+                        <!-- Right -->
+                        <Grid Grid.Column="2" Grid.RowSpan="3"
+                              VerticalAlignment="{Binding ActualPlacement, Converter={StaticResource PlacementToAlignmentConverter}, ConverterParameter={x:Static controls:BorderSide.Right}}"
+                              Visibility="{Binding ActualPlacement, Converter={StaticResource PlacementToVisibilityConverter}, ConverterParameter={x:Static controls:BorderSide.Right}}"
+                              Margin="{Binding BorderThickness, 
+                                               RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                               Converter={StaticResource BorderThicknessToContainerMarginConverter},
+                                               ConverterParameter={x:Static controls:BorderSide.Right}}">
+                            <Rectangle Width="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Height="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Right}}" />
+                        </Grid>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

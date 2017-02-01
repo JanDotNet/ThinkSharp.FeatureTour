@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Threading;
 using ThinkSharp.FeatureTouring.Logging;
 using ThinkSharp.Logging;
 
@@ -21,6 +22,19 @@ namespace ThinkSharp.FeatureTouring.ExampleApplication
 
             Log.SetLogger(new NullLogger());
             Log.SetLogger(new CustomConsoleLogger());
+
+            DispatcherUnhandledException += OnDispatcherUnhandledException;
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+        }
+
+        private void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        {
+            
+        }
+
+        private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs dispatcherUnhandledExceptionEventArgs)
+        {
+            
         }
     }
 }

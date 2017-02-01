@@ -5,21 +5,25 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Touring\TourViews.xaml"/>
+                <!--
+                    The following exclusive configurations are available.
+                -->
+                
+                <!-- Option 1. Use a theme that styles the TourControl and sets a custom control template
+                               NOTE: Custom control templates are supported in licensed version only -->
+                <!--<ResourceDictionary Source="Themes\ExampleTheme.xaml" />-->
+                <!--<ResourceDictionary Source="Themes\OrginalTheme.xaml" />-->
+
+                <!-- Option 2. Style the popup using supported properties
+                               The properties below are bound to the UI. Usually the values are constant. -->
                 <ResourceDictionary>
-                    <Style TargetType="featureTouringControls:TourControl">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ColorSchemaIndex, Source={x:Static featureTouring:MainWindowViewModel.Instance}}" Value="1">
-                                <Setter Property="Background" Value="#3A3A3A"/>
-                                <Setter Property="Foreground" Value="#AAA9AA"/>
-                                <Setter Property="BorderBrush" Value="#040404" />
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ColorSchemaIndex, Source={x:Static featureTouring:MainWindowViewModel.Instance}}" Value="2">
-                                <Setter Property="Background" Value="#55AA55"/>
-                                <Setter Property="Foreground" Value="#004400"/>
-                                <Setter Property="CornerRadius" Value="0"/>
-                            </DataTrigger>
-                        </Style.Triggers>
+                    <Style TargetType="{x:Type featureTouringControls:TourControl}">
+                        <Setter Property="Background" Value="{Binding PopupStyle.Background, Source={x:Static featureTouring:MainWindowViewModel.Instance}}"/>
+                        <Setter Property="BorderBrush" Value="{Binding PopupStyle.BorderBrush, Source={x:Static featureTouring:MainWindowViewModel.Instance}}"/>
+                        <Setter Property="Foreground" Value="{Binding PopupStyle.Foreground, Source={x:Static featureTouring:MainWindowViewModel.Instance}}" />
+                        <Setter Property="FontSize" Value="{Binding PopupStyle.FontSize, Source={x:Static featureTouring:MainWindowViewModel.Instance}}" />
+                        <Setter Property="CornerRadius" Value="{Binding PopupStyle.CornerRadius, Source={x:Static featureTouring:MainWindowViewModel.Instance}}"/>
+                        <Setter Property="BorderThickness" Value="{Binding PopupStyle.BorderThickness, Source={x:Static featureTouring:MainWindowViewModel.Instance}}"/>
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
