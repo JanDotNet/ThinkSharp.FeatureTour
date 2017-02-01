@@ -5,7 +5,8 @@
     xmlns:featureTouring="clr-namespace:ThinkSharp.FeatureTouring;assembly=ThinkSharp.FeatureTour"
     xmlns:featureTouring1="clr-namespace:ThinkSharp.FeatureTouring">
 
-    <!-- This is an example theme which is slightly different from the orginal theme. -->
+
+    <!-- This is the orginal (default) theme of the feature tour component. -->
     <Style TargetType="{x:Type controls:TourControl}">
         <!-- Usually, that properties are set to constant values -->
         <Setter Property="Background" Value="{Binding PopupStyle.Background, Source={x:Static featureTouring1:MainWindowViewModel.Instance}}"/>
@@ -190,18 +191,12 @@
                                                RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
                                                Converter={StaticResource BorderThicknessToContainerMarginConverter},
                                                ConverterParameter={x:Static controls:BorderSide.Top}}">
-                            <Polygon Points="0,20 20,0 40,20 0,20" Style="{StaticResource PolygonStyle}" />
-                            <Polygon Points="0,20 20,0 40,20 0,20"  Style="{StaticResource InnerPolygonStyle}">
-                                <Polygon.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.01" ScaleY="1.01" CenterX="20" CenterY="10" />
-                                        <TranslateTransform Y="{Binding BorderThickness, 
-                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
-                                        Converter={StaticResource BorderThicknessToInnerPolygonTransform},
-                                        ConverterParameter={x:Static controls:BorderSide.Top}}" />
-                                    </TransformGroup>
-                                </Polygon.RenderTransform>
-                            </Polygon>
+                            <Rectangle Height="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Width="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Top}}" />
                         </Grid>
 
                         <!-- Bottom -->
@@ -212,18 +207,12 @@
                                                RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
                                                Converter={StaticResource BorderThicknessToContainerMarginConverter},
                                                ConverterParameter={x:Static controls:BorderSide.Bottom}}">
-                            <Polygon Points="0,0 20,20 40,0" Style="{StaticResource PolygonStyle}" />
-                            <Polygon Points="0,0 20,20 40,0" Style="{StaticResource InnerPolygonStyle}">
-                                <Polygon.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05" CenterX="20" CenterY="10" />
-                                        <TranslateTransform Y="{Binding BorderThickness, 
-                                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
-                                                                        Converter={StaticResource BorderThicknessToInnerPolygonTransform},
-                                                                        ConverterParameter={x:Static controls:BorderSide.Bottom}}" />
-                                    </TransformGroup>
-                                </Polygon.RenderTransform>
-                            </Polygon>
+                            <Rectangle Height="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Width="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Bottom}}" />
                         </Grid>
 
                         <!-- Left -->
@@ -234,18 +223,12 @@
                                                RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
                                                Converter={StaticResource BorderThicknessToContainerMarginConverter},
                                                ConverterParameter={x:Static controls:BorderSide.Left}}">
-                            <Polygon Points="20,0 0,20 20,40 20,0" Style="{StaticResource PolygonStyle}" />
-                            <Polygon Points="20,0 0,20 20,40 20,0" Style="{StaticResource InnerPolygonStyle}">
-                                <Polygon.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05" CenterX="10" CenterY="20" />
-                                        <TranslateTransform X="{Binding BorderThickness, 
-                                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
-                                                                        Converter={StaticResource BorderThicknessToInnerPolygonTransform},
-                                                                        ConverterParameter={x:Static controls:BorderSide.Left}}" />
-                                    </TransformGroup>
-                                </Polygon.RenderTransform>
-                            </Polygon>
+                            <Rectangle Width="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Height="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Left}}" />
                         </Grid>
 
                         <!-- Right -->
@@ -256,18 +239,12 @@
                                                RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
                                                Converter={StaticResource BorderThicknessToContainerMarginConverter},
                                                ConverterParameter={x:Static controls:BorderSide.Right}}">
-                            <Polygon Points="0,0 20,20 0,40 0,0" Style="{StaticResource PolygonStyle}" />
-                            <Polygon Points="0,0 20,20 0,40 0,0" Style="{StaticResource InnerPolygonStyle}">
-                                <Polygon.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05" CenterX="10" CenterY="20" />
-                                        <TranslateTransform X="{Binding BorderThickness, 
-                                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
-                                                                        Converter={StaticResource BorderThicknessToInnerPolygonTransform},
-                                                                        ConverterParameter={x:Static controls:BorderSide.Right}}" />
-                                    </TransformGroup>
-                                </Polygon.RenderTransform>
-                            </Polygon>
+                            <Rectangle Width="20"
+                                       StrokeThickness="0"
+                                       Fill="{Binding   BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl}}"
+                                       Height="{Binding  BorderThickness, 
+                                                        RelativeSource={RelativeSource FindAncestor, AncestorType=controls:TourControl},
+                                                        Converter={StaticResource ThicknessToStrokeThickness}, ConverterParameter={x:Static controls:BorderSide.Right}}" />
                         </Grid>
 
                     </Grid>
