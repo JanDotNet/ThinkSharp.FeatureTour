@@ -1,7 +1,7 @@
 ## FeatureTour - a WPF touring component
 
 FeatureTour is a component for creating interactive tours for WPF applications. 
-This repository contains a demo application that shows how to use it.
+This repository contains a demo application that shows how to use and style it.
 
 ![Demo Application](http://images.thinksharp.de/web/FeatureTour.Demo.png)
 
