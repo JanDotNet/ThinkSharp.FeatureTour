@@ -64,8 +64,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="ThinkSharp.FeatureTour, Version=1.1.0.72, Culture=neutral, PublicKeyToken=64d19806062b0258, processorArchitecture=MSIL">
-      <HintPath>..\packages\Thinksharp.FeatureTour.1.1.0\lib\net40\ThinkSharp.FeatureTour.dll</HintPath>
+    <Reference Include="ThinkSharp.FeatureTour, Version=1.2.0.75, Culture=neutral, PublicKeyToken=64d19806062b0258, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinksharp.FeatureTour.1.2.0\lib\net40\ThinkSharp.FeatureTour.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
@@ -101,6 +101,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomTourViewModel.cs" />
     <Compile Include="Logging\CustomConsoleLogger.cs" />
     <Compile Include="Logging\Log4NetLogger.cs" />
     <Compile Include="PopupStyle.cs" />

@@ -168,8 +168,17 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Column="1" Text="{Binding Steps}" Margin="0,0,10,0"
-                                               HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock Grid.Column="1" Margin="0,0,10,0"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold">
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0} from {1} {2}">
+                                                <Binding Path="CurrentStepNo" />
+                                                <Binding Path="TotalStepsCount" />
+                                                <Binding Path="CustomProperty" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+
 
                                     <Button Grid.Column="2" Content="{x:Static featureTouring:TextLocalization.DoIt}" Margin="0,0,10,0" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center"
                                         Command="{Binding CmdDoIt}" Style="{StaticResource ButtonStyle}" Visibility="{Binding ShowDoIt, Converter={StaticResource BooleanToVisibilityConverter}}">

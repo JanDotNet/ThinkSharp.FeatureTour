@@ -33,6 +33,8 @@ namespace ThinkSharp.FeatureTouring
 
         private MainWindowViewModel()
         {
+            FeatureTour.SetViewModelFactoryMethod(tourRun => new CustomTourViewModel(tourRun));
+
             var navigator = FeatureTour.GetNavigator();
 
             navigator.ForStep(ElementID.TextBoxPath).AttachDoable(s => Path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
