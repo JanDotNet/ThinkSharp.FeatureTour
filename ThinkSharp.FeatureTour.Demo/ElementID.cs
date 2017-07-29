@@ -22,5 +22,6 @@ namespace ThinkSharp.FeatureTouring
         public static readonly string ButtonPushMeToo = "ButtonPushMeToo";
         public static readonly string ButtonClose = "ButtonClose";
         public static readonly string CustomView = "CustomView";
+        public static readonly string ButtonOverView = "ButtonOverView";
     }
 }

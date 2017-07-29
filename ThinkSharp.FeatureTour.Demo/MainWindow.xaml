@@ -49,6 +49,10 @@
                     featureTouring:TourHelper.ElementID="{x:Static app:ElementID.ButtonCustomView}"
                     featureTouring:TourHelper.Placement="RightCenter"/>
 
+            <Button Content="Tour Selection Menu" Command="{Binding CmdStartOverView}"
+                    featureTouring:TourHelper.ElementID="{x:Static app:ElementID.ButtonOverView}"
+                    featureTouring:TourHelper.Placement="RightCenter"/>
+
         </StackPanel>
 
         <StackPanel Grid.Column="2" Margin="10"

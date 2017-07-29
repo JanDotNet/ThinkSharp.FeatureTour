@@ -15,6 +15,7 @@ namespace ThinkSharp.FeatureTouring
         private ICommand _cmdStartActiveTour;
         private ICommand _cmdStartDialogTour;
         private ICommand _cmdStartCustomViewTour;
+        private ICommand _cmdStartOverView;
         private ICommand _cmdOpenDialog;
         private ICommand _cmdClear;
         private Placement _placement;
@@ -25,7 +26,6 @@ namespace ThinkSharp.FeatureTouring
         private int _selectedIndex;
         private string _styleText;
 
-        private static readonly MainWindowViewModel _instance = new MainWindowViewModel();
         private readonly PopupStyle myPopupStyle = new PopupStyle();
 
 
@@ -141,6 +141,18 @@ namespace ThinkSharp.FeatureTouring
             }
         }
 
+        public ICommand CmdStartOverView
+        {
+            get
+            {
+                if (_cmdStartOverView == null)
+                {
+                    _cmdStartOverView = new RelayCommand(TourStarter.StartOverView);
+                }
+                return _cmdStartOverView;
+            }
+        }
+
         public ICommand CmdOpenDialog
         {
             get
@@ -216,6 +228,6 @@ namespace ThinkSharp.FeatureTouring
 
         public PopupStyle PopupStyle => myPopupStyle;
 
-        public static MainWindowViewModel Instance { get { return _instance; } }
+        public static MainWindowViewModel Instance { get; } = new MainWindowViewModel();
     }
 }

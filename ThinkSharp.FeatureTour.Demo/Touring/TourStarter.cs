@@ -1,4 +1,5 @@
-﻿using ThinkSharp.FeatureTouring.Models;
+﻿using GalaSoft.MvvmLight;
+using ThinkSharp.FeatureTouring.Models;
 
 namespace ThinkSharp.FeatureTouring.Touring
 {
@@ -17,6 +18,7 @@ namespace ThinkSharp.FeatureTouring.Touring
                     new Step(ElementID.ButtonTourWithDialog, "Tour with Dialog", "Starts a tour that demonstrates how to created tours with dialogs."),
                     new Step(ElementID.ButtonPositioning, "Positioning", "Starts a tour that shows the popup positioning options"),
                     new Step(ElementID.ButtonCustomView, "CustomView", "Starts a tour that shows ho to define custom views"),
+                    new Step(ElementID.ButtonOverView, "Tour Selection Menu", "Opens a menu screen that provides all available tours."),
                 }
             };
             tour.Start();
@@ -97,6 +99,23 @@ namespace ThinkSharp.FeatureTouring.Touring
                     {
                         HeaderDataTemplateKey = "CustomizeHeaderView",
                         ContentDataTemplateKey = "CustomizeHeaderContentView"
+                    },
+                }
+            };
+            tour.Start();
+        }
+
+        public static void StartOverView()
+        {
+            var tour = new Tour
+            {
+                Name = "Overview",
+                ShowNextButtonDefault = false,
+                Steps = new[]
+                {
+                    new Step(ElementID.CustomView, "Welcome - Select a tour", MainWindowViewModel.Instance)
+                    {
+                        ContentDataTemplateKey = "SelectTourDataTemplate"
                     },
                 }
             };
