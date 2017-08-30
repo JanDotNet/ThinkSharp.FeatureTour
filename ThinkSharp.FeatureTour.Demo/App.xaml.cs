@@ -7,7 +7,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
 using ThinkSharp.FeatureTouring.Logging;
-using ThinkSharp.Logging;
 
 namespace ThinkSharp.FeatureTouring.ExampleApplication
 {

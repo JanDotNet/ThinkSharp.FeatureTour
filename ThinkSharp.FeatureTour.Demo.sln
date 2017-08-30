@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkSharp.FeatureTour.Demo", "ThinkSharp.FeatureTour.Demo\ThinkSharp.FeatureTour.Demo.csproj", "{C22BA08A-A22F-4D8D-8963-B35C0FF710EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkSharp.FeatureTour.Test", "ThinkSharp.FeatureTour.Test\ThinkSharp.FeatureTour.Test.csproj", "{F0CB2611-C1DB-47F8-92FC-8C724EB3043E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkSharp.FeatureTour", "ThinkSharp.FeatureTour\ThinkSharp.FeatureTour.csproj", "{5A136EC9-05A4-4C1C-AB6E-DA5D13560388}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{C22BA08A-A22F-4D8D-8963-B35C0FF710EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22BA08A-A22F-4D8D-8963-B35C0FF710EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22BA08A-A22F-4D8D-8963-B35C0FF710EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0CB2611-C1DB-47F8-92FC-8C724EB3043E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0CB2611-C1DB-47F8-92FC-8C724EB3043E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0CB2611-C1DB-47F8-92FC-8C724EB3043E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0CB2611-C1DB-47F8-92FC-8C724EB3043E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A136EC9-05A4-4C1C-AB6E-DA5D13560388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A136EC9-05A4-4C1C-AB6E-DA5D13560388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A136EC9-05A4-4C1C-AB6E-DA5D13560388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A136EC9-05A4-4C1C-AB6E-DA5D13560388}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

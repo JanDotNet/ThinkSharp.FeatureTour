@@ -64,10 +64,6 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="ThinkSharp.FeatureTour, Version=1.2.0.75, Culture=neutral, PublicKeyToken=64d19806062b0258, processorArchitecture=MSIL">
-      <HintPath>..\packages\Thinksharp.FeatureTour.1.2.0\lib\net40\ThinkSharp.FeatureTour.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -155,6 +151,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ExampleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThinkSharp.FeatureTour\ThinkSharp.FeatureTour.csproj">
+      <Project>{5a136ec9-05a4-4c1c-ab6e-da5d13560388}</Project>
+      <Name>ThinkSharp.FeatureTour</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
