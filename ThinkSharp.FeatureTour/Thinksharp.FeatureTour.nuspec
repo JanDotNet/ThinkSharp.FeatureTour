@@ -2,19 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Thinksharp.FeatureTour</id>
-        <version>0.0.0</version>
-        <title>FeatureTour</title>
+        <version>#VERSION#</version> <!-- will be replaced by build script -->
+        <title>FeatureTour - a WPF touring component</title>
         <authors>Jan-Niklas Schäfer</authors>
-        <projectUrl>http://featuretour.de</projectUrl>
+        <projectUrl>https://github.com/JanDotNet/ThinkSharp.FeatureTour</projectUrl>
         <iconUrl>http://images.thinksharp.de/nuget/feature_tour.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Component for creating interactive tours for WPF applications</description>
         <tags>WPF tutorial tour learning explanation</tags>
     </metadata>
     <files>
-        <file src="bin\Release\Confused\ThinkSharp.FeatureTour.dll" target="lib\net40\ThinkSharp.FeatureTour.dll" />
+        <file src="bin\Release\ThinkSharp.FeatureTour.dll" target="lib\net40\ThinkSharp.FeatureTour.dll" />
         <file src="bin\Release\ThinkSharp.FeatureTour.xml" target="lib\net40\ThinkSharp.FeatureTour.xml" />
-        <file src="Tools\LicenseActivator.exe" target="tools\LicenseActivator.exe" />
-        <file src="Tools\LicenseActivator.exe.config" target="tools\LicenseActivator.exe.config" />
+		<file src="bin\Release\ThinkSharp.FeatureTour.pdb" target="lib\net40\ThinkSharp.FeatureTour.pdb" />
     </files>
 </package>

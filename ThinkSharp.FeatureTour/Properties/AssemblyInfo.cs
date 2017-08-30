@@ -55,9 +55,4 @@ using System.Windows;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: InternalsVisibleTo("ThinkSharp.FeatureTour.Test, PublicKey=" +
-                                "0024000004800000940000000602000000240000525341310004000001000100db7399d1c705e9" +
-                                "ed0b81940b0400227ab6700238c2f4b33292d5e2c16b1c0c4f197bf2549fb52807ebd35e6a2b44" +
-                                "1b8c1be584b3910fafd0601029b0a003312c67f23d9cecd9ba03c4e2317087415f7f6841a8d718" +
-                                "3dac9be2d9688df1fb6424d82d057f7301efb8125100dfc9729266fe2d57efbc9e5e4490563bd5" +
-                                "e3b0b8c0")]
+[assembly: InternalsVisibleTo("ThinkSharp.FeatureTour.Test")]

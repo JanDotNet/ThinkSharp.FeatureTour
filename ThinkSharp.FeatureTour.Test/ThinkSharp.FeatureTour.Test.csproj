@@ -41,7 +41,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Signing.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -75,9 +76,6 @@
     <Compile Include="VisualElementManagerMock.cs">
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Signing.snk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ThinkSharp.FeatureTour\ThinkSharp.FeatureTour.csproj">
