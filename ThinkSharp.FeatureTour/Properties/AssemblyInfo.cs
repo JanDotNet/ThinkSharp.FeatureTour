@@ -11,9 +11,9 @@ using System.Windows;
 [assembly: AssemblyTitle("FeatureTour - WPF touring component")]
 [assembly: AssemblyDescription("Component for creating interactive tours for WPF applications.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jan-Niklas Schäfer Software Solutions")]
-[assembly: AssemblyProduct("FeatureTour")]
-[assembly: AssemblyCopyright("Copyright © 2017 - Jan-Niklas Schäfer Software Solutions")]
+[assembly: AssemblyCompany("ThinkSharp")]
+[assembly: AssemblyProduct("ThinkSharp.FeatureTour")]
+[assembly: AssemblyCopyright("Copyright © 2017 - Jan-Niklas Schäfer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

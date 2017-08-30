@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ThinkSharp.FeatureTour.Test")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("FeatureTour Component Test Suite")]
+[assembly: AssemblyDescription("Component for creating interactive tours for WPF applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ThinkSharp")]
 [assembly: AssemblyProduct("ThinkSharp.FeatureTour.Test")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
+[assembly: AssemblyCopyright("Copyright © 2017 - Jan-Niklas Schäfer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

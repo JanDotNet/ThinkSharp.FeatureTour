@@ -143,7 +143,6 @@
       <SubType>Code</SubType>
     </Compile>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>

@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ThinkSharp.FeatureTour.Demo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("FeatureTour Component Demo Application")]
+[assembly: AssemblyDescription("Component for creating interactive tours for WPF applications.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jan-Niklas Schäfer Software Solutions")]
+[assembly: AssemblyCompany("ThinkSharp")]
 [assembly: AssemblyProduct("ThinkSharp.FeatureTour.Demo")]
-[assembly: AssemblyCopyright("Copyright © 2016 Jan-Niklas Schäfer Software Solutions")]
+[assembly: AssemblyCopyright("Copyright © 2017 - Jan-Niklas Schäfer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
