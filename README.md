@@ -41,6 +41,6 @@ Browse [FeatureTour Wiki](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wi
 FeatureTour is released under [The MIT license (MIT)](LICENSE.TXT)
 
 ## Donation
-If you like FeatureTour and use it in your project(s), you can give me a cup of coffee :) 
+If you like FeatureTour and use it in your project(s), feel free to give me a cup of coffee :) 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSBFDUU5UUQZL)
