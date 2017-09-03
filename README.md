@@ -22,7 +22,6 @@ Browse [FeatureTour Wiki](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wi
 
 **Introduction**
 
-* [Release Notes](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Release-Notes)
 * [Overview](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Introduction#introduction)
 
 **API**
