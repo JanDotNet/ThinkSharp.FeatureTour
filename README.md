@@ -20,7 +20,7 @@ FeatureTour can be installed via [Nuget](https://www.nuget.org/packages/Thinksha
 
 #### Creating tour definition in C#:
 
-![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_01.png)
+![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_01.png=600x400)
 
 #### Define popup location in XAML:
 
