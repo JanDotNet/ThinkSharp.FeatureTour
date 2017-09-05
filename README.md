@@ -6,7 +6,7 @@
 
 ## Intoduction
 
-FeatureTour is a component for creating interactive tours for WPF applications. 
+FeatureTour is a component for creating interactive tours for WPF applications. The repo contains also a small application which demonstrates the usage of the library:
 
 ![Demo Application](http://images.thinksharp.de/web/FeatureTour.Demo.png)
 
@@ -14,7 +14,25 @@ FeatureTour is a component for creating interactive tours for WPF applications.
 
 FeatureTour can be installed via [Nuget](https://www.nuget.org/packages/Thinksharp.FeatureTour)
 
-      Install-Package ThinkSharp.FeatureTour 
+      Install-Package ThinkSharp.FeatureTour
+      
+## Overview
+
+#### Creating tour definition in C#:
+
+![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_01.png)
+
+#### Define popup location in XAML:
+
+![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_02.png)
+
+#### Control navigation in code:
+
+![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_03.png)
+
+#### Attach doable actions to enable the user to enter extensive input with just one click:
+
+![Overview_01](https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_04.png)
 
 ## API Reference
 
