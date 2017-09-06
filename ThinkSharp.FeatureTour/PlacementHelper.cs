@@ -22,10 +22,14 @@ namespace ThinkSharp.FeatureTouring
         [StructLayout(LayoutKind.Sequential)]
         private struct RECT
         {
+            // ReSharper disable MemberCanBePrivate.Local
+            // ReSharper disable FieldCanBeMadeReadOnly.Local
             public int Left; // X coordinate of top left point
             public int Top; // Y coordinate of top left point
             public int Right; // X coordinate of bottom right point
             public int Bottom; // Y coordinate of bottom right point
+            // ReSharper restore FieldCanBeMadeReadOnly.Local
+            // ReSharper restore MemberCanBePrivate.Local
         }
 
         public static Placement GetActualPlacement(this Popup popup, Placement placement)
