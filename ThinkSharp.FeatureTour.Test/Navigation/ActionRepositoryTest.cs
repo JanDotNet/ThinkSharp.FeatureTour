@@ -111,7 +111,6 @@ namespace ThinkSharp.FeatureTouring.Test.Navigation
         [TestMethod]
         public void TestClear()
         {
-            int a = 0;
             int b = 0;
             var repo = new ActionRepository();
             repo.AddAction("add", s => b++, s => true);

@@ -126,13 +126,16 @@ namespace ThinkSharp.FeatureTouring.Helper
         }
 
         /// <summary>
-        ///   Serializes the specified object to XML using the default serializer for the specified type.
+        /// Serializes the specified object to XML using the default serializer for the specified type.
         /// </summary>
         /// <param name="obj">
-        ///   The object to serialize.
+        /// The object to serialize.
+        /// </param>
+        /// <param name="type">
+        /// The type to serialize.
         /// </param>
         /// <returns>
-        ///   The xml serialized object.
+        /// The XML serialized object.
         /// </returns>
         public static String Serialize(Object obj, Type type)
         {

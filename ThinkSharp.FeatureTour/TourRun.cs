@@ -43,8 +43,7 @@ namespace ThinkSharp.FeatureTouring
         private TourViewModel myTourViewModel;
         private StepNode myCurrentStepNode = null;
         private Guid myCurrentWindowID = Guid.Empty;
-        private static string theFirstTourID = null;
-        
+
         enum HandleWindowTransitionResult { ShowPopup, HidePopup, DoNothing }
 
         //  .ctor

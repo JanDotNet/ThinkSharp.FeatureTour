@@ -24,7 +24,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
             var execute = new ExecuteAction(executeAction);
 
             if (myExecuteActions.ContainsKey(name))
-                Log.WarnFormat($"Action with name '{name}' already exists. Will be overwritten!");
+                Log.Warn($"Action with name '{name}' already exists. Will be overwritten!");
 
             myExecuteActions[name] = execute;
 

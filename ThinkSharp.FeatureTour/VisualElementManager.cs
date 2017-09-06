@@ -45,7 +45,7 @@ namespace ThinkSharp.FeatureTouring
         IEnumerable<VisualElement> GetVisualElements(bool includeUnloaded);
 
         /// <summary>
-        /// Gets the <see cref="VisualElement"/> with the specified <see cref="elementID"/> or null if the element is nor available.
+        /// Gets the <see cref="VisualElement"/> with the specified elementID or null if the element is nor available.
         /// </summary>
         /// <param name="elementID">
         /// The element ID to get the <see cref="VisualElement"/> for.

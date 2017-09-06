@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace ThinkSharp.FeatureTouring.Helper
 {
+    /// <summary>
+    /// Interface or releasable objects.
+    /// </summary>
     public interface IReleasable
     {
+        /// <summary>
+        /// Releases the object.
+        /// </summary>
         void Release();
     }
 }

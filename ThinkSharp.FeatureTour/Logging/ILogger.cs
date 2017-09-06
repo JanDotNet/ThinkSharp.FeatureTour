@@ -4,19 +4,54 @@ using System;
 
 namespace ThinkSharp.FeatureTouring.Logging
 {   
+    /// <summary>
+    /// Interface for abstracting a logger.
+    /// </summary>
     public interface ILogger
     {
+        /// <summary>
+        /// Log debug message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         void Debug(object message);
+        /// <summary>
+        /// Log debug message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         void Debug(object message, Exception exception);
-        void DebugFormat(string format, params object[] args);
+        /// <summary>
+        /// Log informational message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         void Info(object message);
+        /// <summary>
+        /// Log informational message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         void Info(object message, Exception exception);
-        void InfoFormat(string format, params object[] args);
+        /// <summary>
+        /// Log warning message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         void Warn(object message);
+        /// <summary>
+        /// Log warning message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         void Warn(object message, Exception exception);
-        void WarnFormat(string format, params object[] args);
+        /// <summary>
+        /// Log error message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         void Error(object message);
+        /// <summary>
+        /// Log error message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         void Error(object message, Exception exception);
-        void ErrorFormat(string format, params object[] args);
     }
 }

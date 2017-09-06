@@ -8,30 +8,61 @@ using System.Text;
 
 namespace ThinkSharp.FeatureTouring.Logging
 {
+    /// <summary>
+    /// Logger that ignores logging
+    /// </summary>
     public class NullLogger : ILogger
     {
+        /// <summary>
+        /// Log debug message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         public void Debug(object message) { }
 
+        /// <summary>
+        /// Log debug message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         public void Debug(object message, Exception exception) { }
 
-        public void DebugFormat(string format, params object[] args) { }
-
+        /// <summary>
+        /// Log error message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         public void Error(object message) { }
 
+        /// <summary>
+        /// Log error message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         public void Error(object message, Exception exception) { }
 
-        public void ErrorFormat(string format, params object[] args) { }
-
+        /// <summary>
+        /// Log informational message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         public void Info(object message) { }
 
+        /// <summary>
+        /// Log informational message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         public void Info(object message, Exception exception) { }
 
-        public void InfoFormat(string format, params object[] args) { }
-
+        /// <summary>
+        /// Log warning message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
         public void Warn(object message) { }
 
+        /// <summary>
+        /// Log warning message.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="exception">The exception to log.</param>
         public void Warn(object message, Exception exception) { }
-
-        public void WarnFormat(string format, params object[] args) { }
     }
 }
