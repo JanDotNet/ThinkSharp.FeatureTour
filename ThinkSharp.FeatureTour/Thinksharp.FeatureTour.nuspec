@@ -3,7 +3,7 @@
     <metadata>
         <id>Thinksharp.FeatureTour</id>
         <version>#VERSION#</version> <!-- will be replaced by build script -->
-        <title>FeatureTour - a WPF touring component</title>
+        <title>FeatureTour - Enhance your WPF applications with interactive Tutorials!</title>
         <authors>Jan-Niklas Schäfer</authors>
         <projectUrl>https://github.com/JanDotNet/ThinkSharp.FeatureTour</projectUrl>
         <iconUrl>http://images.thinksharp.de/nuget/feature_tour.png</iconUrl>
