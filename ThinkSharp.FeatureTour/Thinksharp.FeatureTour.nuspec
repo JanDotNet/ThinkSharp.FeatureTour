@@ -14,6 +14,6 @@
     <files>
         <file src="bin\Release\ThinkSharp.FeatureTour.dll" target="lib\net40\ThinkSharp.FeatureTour.dll" />
         <file src="bin\Release\ThinkSharp.FeatureTour.xml" target="lib\net40\ThinkSharp.FeatureTour.xml" />
-		<file src="bin\Release\ThinkSharp.FeatureTour.pdb" target="lib\net40\ThinkSharp.FeatureTour.pdb" />
+		    <file src="bin\Release\ThinkSharp.FeatureTour.pdb" target="lib\net40\ThinkSharp.FeatureTour.pdb" />
     </files>
 </package>
