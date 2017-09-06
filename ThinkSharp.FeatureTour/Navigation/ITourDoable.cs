@@ -7,13 +7,13 @@ using ThinkSharp.FeatureTouring.Models;
 namespace ThinkSharp.FeatureTouring.Navigation
 {
     /// <summary>
-    /// Interface for an object that allows to add doables.
+    /// Interface for an object that allows to add doable actions.
     /// </summary>
     public interface ITourDoable
     {
         /// <summary>
         /// Attaches a doable action.
-        /// If a step has a doable action attache, the popup shows a 'DO' button that gives the user the posibility to execute the attached action.
+        /// If a step has a doable action attach, the pop-up shows a 'DO' button that gives the user the possibility to execute the attached action.
         /// </summary>
         /// <param name="doAction">
         /// The doable action to execute.
@@ -24,7 +24,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
 
         /// <summary>
         /// Attaches a doable action.
-        /// If a step has a doable action attache, the popup shows a 'DO' button that gives the user the posibility to execute the attached action.
+        /// If a step has a doable action attach, the pop-up shows a 'DO' button that gives the user the possibility to execute the attached action.
         /// </summary>
         /// <param name="doAction">
         /// The doable action to execute.

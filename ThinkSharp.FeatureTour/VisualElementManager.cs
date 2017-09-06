@@ -24,12 +24,12 @@ namespace ThinkSharp.FeatureTouring
     internal interface IPlacementAware
     {
         /// <summary>
-        /// Gets or sets the desired <see cref="Placement"/> of the popup.
+        /// Gets or sets the desired <see cref="Placement"/> of the pop-up.
         /// </summary>
         Placement Placement { get; set; }
 
         /// <summary>
-        /// Gets or sets the actual <see cref="Placement"/>. The framework may change the desired placement (e.g. if the popup can not be placed on left-side).
+        /// Gets or sets the actual <see cref="Placement"/>. The framework may change the desired placement (e.g. if the pop-up can not be placed on left-side).
         /// </summary>
         Placement ActualPlacement { get; set; }
     }

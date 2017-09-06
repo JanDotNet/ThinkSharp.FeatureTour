@@ -9,12 +9,12 @@ using ThinkSharp.FeatureTouring.Logging;
 namespace ThinkSharp.FeatureTouring.Navigation
 {
     /// <summary>
-    /// Abstracts the navigation object for controling the current tour.
+    /// Abstracts the navigation object for controlling the current tour.
     /// </summary>
     public interface IFeatureTourNavigator
     {
         /// <summary>
-        /// Returns an object providing navigation (next step, previous step, close tour) if the current step has the specified ste ID.
+        /// Returns an object providing navigation (next step, previous step, close tour) if the current step has the specified step ID.
         /// </summary>
         /// <param name="stepID">
         /// The step ID</param>
@@ -30,12 +30,12 @@ namespace ThinkSharp.FeatureTouring.Navigation
         /// The step ID.
         /// </param>
         /// <returns>
-        /// <see cref="ITourDoable"/> object that for attaching doables.
+        /// <see cref="ITourDoable"/> object for attaching doable action.
         /// </returns>
         ITourDoable ForStep(string stepID);
 
         /// <summary>
-        /// Returns an object for executing custom logic before the step with the speicified step ID was entered.
+        /// Returns an object for executing custom logic before the step with the specified step ID was entered.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.
@@ -46,7 +46,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         ITourExecution OnStepEntering(string stepID);
 
         /// <summary>
-        /// Returns an object for executing custom logic after the step with the speicified step ID was entered.
+        /// Returns an object for executing custom logic after the step with the specified step ID was entered.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.
@@ -57,7 +57,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         ITourExecution OnStepEntered(string stepID);
 
         /// <summary>
-        /// Returns an object for executing custom logic after the step with the speicified step ID was left.
+        /// Returns an object for executing custom logic after the step with the specified step ID was left.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.
@@ -121,8 +121,8 @@ namespace ThinkSharp.FeatureTouring.Navigation
         }
 
         /// <summary>
-        /// Sets a factory method to use subclassed <see cref="TourViewModel"/>s with additional
-        /// properties / behaviors. May be meaningfull in combination with custom templates.
+        /// Sets a factory method to use sub-classed <see cref="TourViewModel"/>s with additional
+        /// properties / behaviors. May be meaningful in combination with custom templates.
         /// </summary>
         /// <param name="factoryMethod">
         /// The factory method to create view model or null to use the default one.
@@ -155,7 +155,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         /// The step ID.
         /// </param>
         /// <returns>
-        /// <see cref="ITourDoable"/> object that for attaching doables.
+        /// <see cref="ITourDoable"/> object for attaching doable action.
         /// </returns>
         public ITourDoable ForStep(string stepID)
         {
@@ -165,7 +165,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         }
 
         /// <summary>
-        /// Returns an object for executing custom logic before the step with the speicified step ID was entered.
+        /// Returns an object for executing custom logic before the step with the specified step ID was entered.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.
@@ -181,7 +181,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         }
 
         /// <summary>
-        /// Returns an object for executing custom logic after the step with the speicified step ID was entered.
+        /// Returns an object for executing custom logic after the step with the specified step ID was entered.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.
@@ -197,7 +197,7 @@ namespace ThinkSharp.FeatureTouring.Navigation
         }
 
         /// <summary>
-        /// Returns an object for executing custom logic after the step with the speicified step ID was left.
+        /// Returns an object for executing custom logic after the step with the specified step ID was left.
         /// </summary>
         /// <param name="stepID">
         /// The step ID.

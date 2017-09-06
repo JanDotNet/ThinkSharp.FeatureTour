@@ -24,24 +24,24 @@ namespace ThinkSharp.FeatureTouring
         /// <summary>
         /// If the element of the next step is on the activated window, the tour goes to the next step.
         /// Otherwise, if one of the previous steps is on the activated window, the tour goes back to that previous step.
-        /// Otherwise the tour is paused (popup hidden).
+        /// Otherwise the tour is paused (pop-up hidden).
         /// </summary>
         NextPreviousHide,
 
         /// <summary>
         /// If the element of the next step is on the on the activated window, the tour goes to the next step.
-        /// Otherwise the tour is paused (popup hidden).
+        /// Otherwise the tour is paused (pop-up hidden).
         /// </summary>
         NextHide,
 
         /// <summary>
         /// If one of the previous steps is on the activated window, the tour goes back to that previous step.
-        /// Otherwise the tour is paused (popup hidden).
+        /// Otherwise the tour is paused (pop-up hidden).
         /// </summary>
         PreviousHide,
 
         /// <summary>
-        /// If the activated window changes, nothing happens. In case of modal windows, popup may be visible but not responsive.
+        /// If the activated window changes, nothing happens. In case of modal windows, pop-up may be visible but not responsive.
         /// </summary>
         None,
     }

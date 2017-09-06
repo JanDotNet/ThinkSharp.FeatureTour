@@ -7,6 +7,9 @@ using ThinkSharp.FeatureTouring.Navigation;
 
 namespace ThinkSharp.FeatureTouring
 {
+    /// <summary>
+    /// Provides attached properties to configure XAML elements to be used with FeatureTour.
+    /// </summary>
     public static class TourHelper
     {
         private static readonly VisualElementManager theVisualElementManager;

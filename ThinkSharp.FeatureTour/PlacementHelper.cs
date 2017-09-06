@@ -12,7 +12,7 @@ namespace ThinkSharp.FeatureTouring
 {
     internal static class PlacementHelper
     {
-        // distance from popup corner to the center of the popup arrow
+        // distance from pop-up corner to the center of the pop-up arrow
         private const int MARGIN = 30;
 
         [DllImport("user32.dll")]
