@@ -9,6 +9,9 @@
         <iconUrl>http://images.thinksharp.de/nuget/feature_tour.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Component for creating interactive tours for WPF applications</description>
+        <licenseUrl>https://github.com/JanDotNet/ThinkSharp.FeatureTour/blob/master/LICENSE.TXT</licenseUrl>
+        <copyright>Copyright (c) 2017 Jan-Niklas Schäfer</copyright>
+        <language>en-US</language>
         <tags>WPF tutorial tour learning explanation</tags>
     </metadata>
     <files>
