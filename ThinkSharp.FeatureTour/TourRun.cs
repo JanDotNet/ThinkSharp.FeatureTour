@@ -318,6 +318,10 @@ namespace ThinkSharp.FeatureTouring
             if (myTour.EnableNextButtonAlways)
                 return true;
 
+            // step entering is usually used to create a state where the visual element is available.
+            if (FeatureTour.HasStepEnteringAttached(step))
+                return true;
+
             var visualElement = myVisualElementManager.GetVisualElement(step.ElementID, true);
             if (visualElement == null || visualElement.WindowID != myCurrentWindowID)
                 return false;

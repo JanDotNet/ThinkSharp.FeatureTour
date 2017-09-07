@@ -241,6 +241,11 @@ namespace ThinkSharp.FeatureTouring.Navigation
         // internal interface
         // //////////////////////////////////////////////////////////////////////
 
+        internal static bool HasStepEnteringAttached(Step step)
+        {
+            return theExecutionRepository.Contains(GetName(step.ID, STEP_ENTERING));
+        }
+
         internal static void SetTourRun(ITourRun run)
         {
             var currentRun = theCurrentTourRun;
