@@ -49,7 +49,9 @@ namespace ThinkSharp.FeatureTouring.Test
 
     internal class WindowManagerMock : IWindowManager
     {
+#pragma warning disable 0067
         public event EventHandler<WindowActivationChangedEventArgs> WindowRemoved;
+#pragma warning restore 0067
         public Guid GetWindowID(UIElement element, string elementID)
         {
             return Guid.Parse("df575070-f243-4e6d-bc14-a5196294cedf");
