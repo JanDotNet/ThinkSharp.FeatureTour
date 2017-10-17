@@ -16,23 +16,15 @@ FeatureTour can be installed via [Nuget](https://www.nuget.org/packages/Thinksha
 
       Install-Package ThinkSharp.FeatureTour
       
-## Overview
-
-#### Creating tour definition in C#:
-
-<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_01.png" width="600">
-
-#### Define popup location in XAML:
-
-<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_02.png" width="600">
-
-#### Control navigation in code:
-
-<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_03.png" width="600">
-
-#### Attach doable actions to enable the user to enter extensive input with just one click:
-
-<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_04.png" width="600">
+[//]: # (## Overview)
+[//]: # (#### Creating tour definition in C#:)
+[//]: # (<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_01.png" width="600">)
+[//]: # (#### Define popup location in XAML:)
+[//]: # (<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_02.png" width="600">)
+[//]: # (#### Control navigation in code:)
+[//]: # (<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_03.png" width="600">)
+[//]: # (#### Attach doable actions to enable the user to enter extensive input with just one click:)
+[//]: # (<img src="https://raw.githubusercontent.com/wiki/JanDotNet/ThinkSharp.FeatureTour/img/FeatureTour_04.png" width="600">)
 
 ## API Reference
 
