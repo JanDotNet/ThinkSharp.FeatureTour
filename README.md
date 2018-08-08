@@ -1,6 +1,6 @@
 # ThinkSharp.FeatureTour
 
-[![Build status](https://ci.appveyor.com/api/projects/status/l3aagqmbfmgxwv3t?svg=true)](https://ci.appveyor.com/project/JanDotNet/thinksharp-featuretour)
+[![Build status](https://ci.appveyor.com/api/projects/status/l3aagqmbfmgxwv3t?svg=true)](https://ci.appveyor.com/project/JanDotNet/thinksharp-justforms)
 [![NuGet](https://img.shields.io/nuget/v/ThinkSharp.FeatureTour.svg)](https://www.nuget.org/packages/ThinkSharp.FeatureTour/) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.TXT)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSBFDUU5UUQZL)
 
