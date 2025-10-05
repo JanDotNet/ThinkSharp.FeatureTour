@@ -8,7 +8,7 @@
 
 FeatureTour is a component for creating interactive tours for WPF applications. The repo contains also a small application which demonstrates the usage of the library:
 
-![Demo Application](http://images.thinksharp.de/web/FeatureTour.Demo.png)
+https://github.com/JanDotNet/ThinkSharp.FeatureTour/tree/master/ThinkSharp.FeatureTour.Demo
 
 ## Installation
 
